@@ -32,7 +32,7 @@ export function Header() {
       </div>
       
       {/* Mobile nav bar (bottom) */}
-      <div className="md:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200">
+      <div className="md:hidden fixed bottom-0 left-0 z-50 w-full h-[calc(4rem+env(safe-area-inset-bottom))] pb-[env(safe-area-inset-bottom)] bg-white border-t border-gray-200">
         <div className="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
           <Link href="/" className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group text-slate-500 hover:text-blue-600">
             <BookOpen className="w-5 h-5 mb-1 text-slate-500 group-hover:text-blue-600" />

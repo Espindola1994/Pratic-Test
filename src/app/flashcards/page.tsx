@@ -195,7 +195,7 @@ function FlashcardsContent() {
             disabled={currentIndex === 0}
             className="flex-1 flex justify-center items-center gap-2 py-4 rounded-xl border-2 border-slate-200 text-slate-600 font-semibold hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition"
           >
-            <ArrowLeft className="w-5 h-5" /> Anterior
+            <ArrowLeft className="w-5 h-5" /> <span className="hidden sm:inline">Anterior</span>
           </button>
           
           <button 
@@ -211,7 +211,7 @@ function FlashcardsContent() {
             title={!hasSelection ? "Marque uma opção de revisão para avançar" : ""}
             className="flex-1 flex justify-center items-center gap-2 py-4 rounded-xl border-2 border-slate-200 text-slate-600 font-semibold hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition"
           >
-            {currentIndex === items.length - 1 ? "Concluir" : "Próxima"} <ArrowRight className="w-5 h-5" />
+            <span className="hidden sm:inline">{currentIndex === items.length - 1 ? "Concluir" : "Próxima"}</span> <ArrowRight className="w-5 h-5" />
           </button>
         </div>
 
