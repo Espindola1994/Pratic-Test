@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, Brain, LayoutDashboard, Search, Zap, Map } from "lucide-react";
+import { BookOpen, Brain, LayoutDashboard, Search, Zap, Map, Star } from "lucide-react";
 
 export function Header() {
   return (
@@ -22,6 +22,9 @@ export function Header() {
           <Link href="/diagramas-rov" className="flex items-center gap-1.5 text-slate-600 hover:text-blue-600 transition-colors">
             <Map className="h-4 w-4" /> Diagramas
           </Link>
+          <Link href="/favoritos" className="flex items-center gap-1.5 text-slate-600 hover:text-blue-600 transition-colors">
+            <Star className="h-4 w-4" /> Favoritos
+          </Link>
           <Link href="/revisao" className="flex items-center gap-1.5 text-slate-600 hover:text-blue-600 transition-colors">
             <Search className="h-4 w-4" /> Revisão Automática
           </Link>
@@ -36,16 +39,16 @@ export function Header() {
       
       {/* Mobile nav bar (bottom) */}
       <div className="md:hidden fixed bottom-0 left-0 z-50 w-full h-[calc(4rem+env(safe-area-inset-bottom))] pb-[env(safe-area-inset-bottom)] bg-white border-t border-gray-200">
-        <div className="grid h-full max-w-[600px] grid-cols-5 mx-auto font-medium">
+        <div className="grid h-full max-w-[600px] grid-cols-6 mx-auto font-medium">
           <Link href="/" className="inline-flex flex-col items-center justify-center px-1 hover:bg-gray-50 group text-slate-500 hover:text-blue-600">
             <BookOpen className="w-5 h-5 mb-1 text-slate-500 group-hover:text-blue-600" />
             <span className="text-[10px]">Home</span>
           </Link>
-          <Link href="/flashcards" className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group text-slate-500 hover:text-blue-600">
+          <Link href="/flashcards" className="inline-flex flex-col items-center justify-center px-1 hover:bg-gray-50 group text-slate-500 hover:text-blue-600">
             <Zap className="w-5 h-5 mb-1 text-slate-500 group-hover:text-blue-600" />
             <span className="text-[10px]">Flashcards</span>
           </Link>
-          <Link href="/mapa-mental" className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group text-slate-500 hover:text-blue-600">
+          <Link href="/mapa-mental" className="inline-flex flex-col items-center justify-center px-1 hover:bg-gray-50 group text-slate-500 hover:text-blue-600">
             <Brain className="w-5 h-5 mb-1 text-slate-500 group-hover:text-blue-600" />
             <span className="text-[10px]">Mapa</span>
           </Link>
@@ -56,6 +59,10 @@ export function Header() {
           <Link href="/diagramas-rov" className="inline-flex flex-col items-center justify-center px-1 hover:bg-gray-50 group text-slate-500 hover:text-blue-600">
             <Map className="w-5 h-5 mb-1 text-slate-500 group-hover:text-blue-600" />
             <span className="text-[10px]">Diagramas</span>
+          </Link>
+          <Link href="/favoritos" className="inline-flex flex-col items-center justify-center px-1 hover:bg-gray-50 group text-slate-500 hover:text-blue-600">
+            <Star className="w-5 h-5 mb-1 text-slate-500 group-hover:text-blue-600" />
+            <span className="text-[10px] truncate max-w-full text-center">Favoritos</span>
           </Link>
         </div>
       </div>

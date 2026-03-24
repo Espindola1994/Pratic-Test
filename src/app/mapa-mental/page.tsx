@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { getAllCategories, getItemsByCategory } from "@/lib/categories";
-import { ChevronDown, FileText, BrainCircuit } from "lucide-react";
+import { ChevronDown, FileText, BrainCircuit, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { useFavorites } from "@/hooks/useFavorites";
 
 export default function MapaMentalPage() {
   const categories = getAllCategories();
@@ -12,6 +13,8 @@ export default function MapaMentalPage() {
   const [openCategories, setOpenCategories] = useState<Record<string, boolean>>(
     categories.reduce((acc, cat) => ({ ...acc, [cat]: false }), {})
   );
+  
+  const { toggleFavorite, isFavorite } = useFavorites();
 
   const toggleCategory = (category: string) => {
     setOpenCategories(prev => ({ ...prev, [category]: !prev[category] }));
@@ -98,8 +101,25 @@ export default function MapaMentalPage() {
                     >
                       <div className="p-5 grid gap-4 bg-slate-50/50">
                         {items.map((item) => (
-                          <div key={item.id} className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-semibold text-slate-800 mb-2">{item.question}</h3>
+                          <div key={item.id} className="relative bg-white p-4 rounded-xl border border-slate-100 shadow-sm group">
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleFavorite(item);
+                              }}
+                              className="absolute top-4 right-4 p-1 rounded-full hover:bg-slate-50 transition-colors"
+                              title={isFavorite(item.id) ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+                            >
+                              <Star 
+                                className={cn(
+                                  "w-5 h-5 transition-all", 
+                                  isFavorite(item.id) 
+                                    ? "fill-yellow-400 text-yellow-500 scale-110" 
+                                    : "text-slate-300 group-hover:text-yellow-400"
+                                )} 
+                              />
+                            </button>
+                            <h3 className="font-semibold text-slate-800 mb-2 pr-8">{item.question}</h3>
                             <p className="text-slate-600 text-sm leading-relaxed">{item.answer}</p>
                           </div>
                         ))}
@@ -130,9 +150,25 @@ export default function MapaMentalPage() {
                   </h3>
                   <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
                     {items.map((item) => (
-                      <div key={`cola-item-${item.id}`} className="text-sm break-inside-avoid">
-                        <strong className="text-slate-800 block mb-0.5">{item.question}</strong>
-                        <span className="text-slate-600 block">{item.answer}</span>
+                      <div key={`cola-item-${item.id}`} className="text-sm break-inside-avoid relative group">
+                        <div className="flex items-start justify-between gap-2">
+                          <strong className="text-slate-800 block mb-0.5">{item.question}</strong>
+                          <button
+                            onClick={() => toggleFavorite(item)}
+                            className="shrink-0 p-0.5 mt-0.5 transition-colors"
+                            title={isFavorite(item.id) ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+                          >
+                            <Star 
+                              className={cn(
+                                "w-4 h-4 transition-all", 
+                                isFavorite(item.id) 
+                                  ? "fill-yellow-400 text-yellow-500" 
+                                  : "text-slate-300 opacity-0 group-hover:opacity-100 hover:text-yellow-400"
+                              )} 
+                            />
+                          </button>
+                        </div>
+                        <span className="text-slate-600 block pr-6">{item.answer}</span>
                       </div>
                     ))}
                   </div>
