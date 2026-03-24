@@ -18,7 +18,6 @@ export default function SimuladoPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>(categories[0]);
   
   // Results
-  const [answered, setAnswered] = useState(0);
 
   const startSimulation = () => {
     let selected = [...allStudyItems];
@@ -45,7 +44,6 @@ export default function SimuladoPage() {
 
     setItems(selected);
     setCurrentIndex(0);
-    setAnswered(0);
     setFinished(false);
     setShowAnswer(false);
     setStarted(true);
@@ -57,8 +55,6 @@ export default function SimuladoPage() {
     updateItemProgress(currentItem.id, {
       reviewed: true
     });
-    
-    setAnswered(prev => prev + 1);
 
     if (currentIndex < items.length - 1) {
       setShowAnswer(false);
