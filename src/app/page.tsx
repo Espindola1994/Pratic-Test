@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Zap, Brain, LayoutDashboard, Search, AlertTriangle, ArrowRight, Settings2, BookOpen } from "lucide-react";
+import { Zap, Brain, LayoutDashboard, Search, AlertTriangle, ArrowRight, Settings2, BookOpen, Map } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getStats } from "@/lib/progress";
 import { allStudyItems } from "@/data/study-data";
@@ -124,6 +124,19 @@ export default function Home() {
               <div>
                 <h3 className="text-xl font-bold text-slate-800">Mapa Mental</h3>
                 <p className="text-slate-500 text-sm">Estruturação por agrupamento</p>
+              </div>
+            </div>
+            <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1 transition-all" />
+          </Link>
+
+          <Link href="/diagramas-rov" className="group flex items-center justify-between p-5 bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-md transition-all">
+            <div className="flex items-center gap-4">
+              <div className="bg-amber-100 p-3 rounded-xl">
+                <Map className="h-6 w-6 text-amber-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-slate-800">Diagramas ROV</h3>
+                <p className="text-slate-500 text-sm">Visualização técnica e Memorização</p>
               </div>
             </div>
             <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1 transition-all" />
