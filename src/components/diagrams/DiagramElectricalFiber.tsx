@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Smartphone } from "lucide-react";
 
 interface DiagramProps {
   hideLabels?: boolean;
@@ -19,11 +20,16 @@ export function DiagramElectricalFiber({ hideLabels = false, hideLines = false }
   const comando = hideLines ? "transparent" : "#ef4444"; // Dashed red
 
   return (
-    <div className="w-full bg-white p-4 sm:p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center overflow-x-auto">
-      <div className="min-w-[900px] max-w-full">
-        <h3 className="text-center font-bold text-xl mb-6 tracking-wider text-slate-800">DIAGRAMA DE BLOCOS – ELÉTRICA E FIBRA ÓPTICA</h3>
+    <div className="w-full flex flex-col items-center">
+      <div className="md:hidden w-full flex items-center justify-center p-3 mb-4 bg-amber-50 text-amber-800 rounded-xl border border-amber-200 text-sm font-semibold shadow-sm">
+        <Smartphone className="w-4 h-4 mr-2 animate-pulse" /> 
+        Para melhor visualização, coloque o celular na horizontal (deitado).
+      </div>
+
+      <div className="w-full bg-white p-4 sm:p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center">
+        <h3 className="text-center font-bold text-xl mb-6 tracking-wider text-slate-800 w-full">DIAGRAMA DE BLOCOS – ELÉTRICA E FIBRA ÓPTICA</h3>
         
-        <svg viewBox="0 0 1000 700" className="w-full h-auto bg-slate-50 border border-slate-200 rounded-lg">
+        <svg viewBox="0 0 1000 700" className="w-full h-auto bg-slate-50 border border-slate-200 rounded-lg" style={{ maxHeight: "85vh" }}>
           
           <defs>
             <marker id="arrowHV" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
