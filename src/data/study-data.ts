@@ -5,6 +5,7 @@ import { studyData3 } from './study-data-3';
 import { studyData4 } from './study-data-4';
 import { studyData5 } from './study-data-5';
 import { studyData6 } from './study-data-6';
+import { studyData7 } from './study-data-7';
 import { StudyItem } from '../types/study';
 
 export { categories };
@@ -15,5 +16,6 @@ export const allStudyItems: StudyItem[] = [
   ...studyData3,
   ...studyData4,
   ...studyData5,
-  ...studyData6
+  ...studyData6,
+  ...studyData7
 ];

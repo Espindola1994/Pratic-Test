@@ -17,7 +17,8 @@ export const categories = [
   "TMS / LARS / Guincho / A-Frame / Slip Ring / Umbilical",
   "Sistema Elétrico / Telemetria / PDU / HVTU / HVJB / GFD / GFM",
   "Segurança",
-  "Operação / Piloto / Classes de ROV"
+  "Operação / Piloto / Classes de ROV",
+  "Manutenção Preventiva"
 ];
 
 export const studyData: StudyItem[] = [
