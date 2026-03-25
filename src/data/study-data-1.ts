@@ -65,7 +65,7 @@ export const studyData: StudyItem[] = [
   { id: "33", itemNumber: "9", category: "Operação com ROV", question: "O que é operação indireta?", answer: "Controlada por sistemas hidráulicos/elétricos.", orderIndex: 33 },
   
   { id: "34", itemNumber: "10", category: "Manipuladores", question: "Quantas funções possui o manipulador avançado (ex: Titan 4)?", answer: "7 funções (7 graus de liberdade).", orderIndex: 34 },
-  { id: "35", itemNumber: "10", category: "Manipuladores", question: "Quais são os movimentos das 7 funções?", answer: "Jaw, Wrist, Yaw, Pitch, Forearm, Elbow, Shoulder, Azimuth.", orderIndex: 35 },
+  { id: "35", itemNumber: "10", category: "Manipuladores", question: "Quais são os movimentos das 7 funções?", answer: "Jaw, Wrist, Yaw, Pitch, Elbow, Shoulder, Azimuth.", orderIndex: 35 },
   { id: "36", itemNumber: "10", category: "Manipuladores", question: "Para que servem esses movimentos?", answer: "Permitir movimentos completos do braço.", orderIndex: 36 },
   { id: "37", itemNumber: "10", category: "Manipuladores", question: "Qual vantagem das 7 funções?", answer: "Alta precisão e flexibilidade.", orderIndex: 37 },
   
