@@ -24,6 +24,7 @@ const acronyms = [
   { term: "TMS", full: "Tether Management System", translation: "Sistema de Gerenciamento do Tether (cabo que liga ao ROV)." },
   { term: "TETHER", full: "Tether Cargo", translation: "Cabo flexível que conecta o TMS ao ROV." },
   { term: "DECK CABLE", full: "Deck Cable", translation: "Cabo de convés." },
+  { term: "DVL", full: "Doppler Velocity Log", translation: "Registro de Velocidade Doppler." },
 ];
 
 export function AcronymsPanel() {
